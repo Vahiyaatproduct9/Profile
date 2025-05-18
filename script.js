@@ -1,7 +1,7 @@
 window.addEventListener('scroll', () => {
     const background = document.querySelector(".background");
     const scrollPosition = window.scrollY;
-    background.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+    background.style.backgroundPositionY = `${scrollPosition * 0.7}px`;
 });
 
 const navbar = document.querySelector(".navbox");
@@ -36,4 +36,20 @@ dot.addEventListener('click', () => {
         navbar.classList.toggle("mobilenav");
 
     }
+})
+const backtotop = document.querySelector(".backtotop");
+
+    window.addEventListener("scroll", () => {
+    if(window.scrollY>100){
+        backtotop.style.animationName = "reappear";
+    }
+    else{
+        backtotop.style.animationName = "disappear";
+    }
+});
+backtotop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
 })
