@@ -1,4 +1,5 @@
 body{
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -9,6 +10,8 @@ body{
 }
 .box
 {
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,11 +27,11 @@ body{
     justify-content: space-between;
     position: fixed;
     top: 30px;
-    width: fit-content;
+    width: auto;
     margin-left: 50px;
     margin-right: 50px;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
     animation-name: down;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
@@ -42,17 +45,18 @@ body{
     }
 }
 .box .navbox:hover{
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
 .box .navbox div{
+    text-align: center;
+    max-height: 25px;
+    height: 25px;
+    width: 175px;
     cursor: pointer;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    margin: 10px 5px 10px 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 10px 0;
+    margin: 10px 5px;
     border-radius: 9px;
     transition: all 0.1s ease-in-out;
 }
@@ -60,6 +64,33 @@ body{
     color: #222;
     transform: scale(1.1);
     background: rgba(255,255,255,0.6);
+}
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box .navbox div ul{
+    display: none;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 50px;
+}
+.box .navbox div ul li{
+    border-radius: 10px;
+    color: #333;
+    background: rgba(255,255,255,0.6);
+    padding: 10px 50px;
+    margin: 5px 0;
+}
+.box .navbox div:hover ul{
+    display: block;
+}
+.box .mobilenav div ul{
+    display: none;
 }
 .background{
     margin: 0;
@@ -79,21 +110,52 @@ body{
     bottom: 0;
     margin: 0;
     padding: 0;
-    height: 50%;
+    height: 100%;
     width: 100%;
-    /* background: red; */
-    background: linear-gradient(180deg, transparent,#1A68FF);
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.background div video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    z-index: -1;
+
+}
+.background div section{
+    text-align: center;
+}
+.background div section p{
+    font-family: Cooper Black;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+.background div section h1{
+    padding: 25px;
+    letter-spacing: 15px;
+    font-size: 100px;
+    font-family: tw cen MT;
+    color: white;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
 }
 .details{
-    box-shadow: 0 0 30px 80px #1A68FF;
+    box-shadow: 0 0 30px 80px rgb(196,210,225);
     position: relative;
     text-align: justify;
     padding: 60px;
-    background: #1A68FF;
+    background: rgb(196,210,225);
 }
 .details p{
     font-size: 25px;
-    color: white;
+    color: #222;
     font-family: Segoe UI;
 }
 
@@ -208,8 +270,8 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     background: rgba(59, 119, 207, 0.7);
     border-radius: 10px;
     color: white;
@@ -231,7 +293,7 @@ a{
     position: fixed;
     top: 0;
     left: -100%;
-    height: 100%;
+    height: 200%;
     width: 100%;
     backdrop-filter: blur(5px);
     animation: ryt 0.2s forwards;
@@ -242,7 +304,7 @@ a{
     position: relative;
     padding: 30px;
     margin: 30px;
-    top: 100px;
+    top: 20%;
     height: auto;
     border-radius: 10px;
     background: rgba(37, 63, 151, 0.6);

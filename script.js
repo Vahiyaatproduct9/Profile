@@ -5,16 +5,16 @@ window.addEventListener('scroll', () => {
 });
 
 const navbar = document.querySelector(".navbox");
-
+const mover = document.querySelector(".mover")
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY) {
-        navbar.style.transform = 'translateY(-130px)';
+        mover.style.transform = 'translateY(-130px)';
     } else {
-        navbar.style.transform = 'translateY(0)';
+        mover.style.transform = 'translateY(0)';
     }
 
     lastScrollY = currentScrollY;
@@ -28,6 +28,7 @@ dot.addEventListener('click', () => {
         dot.style.transform = "rotate(0)";
         navbar.classList.toggle("navbox");
         navbar.classList.toggle("mobilenav");
+        // document.querySelector(".box").style.position =;
     }
     else{
         dot.innerHTML = "⁝";
@@ -53,3 +54,10 @@ backtotop.addEventListener("click", () => {
         behavior: "smooth"
     })
 })
+
+function displayNone(){
+    document.getElementById("medias").style.display = "none";
+}
+function displayBlock(){
+    document.getElementById("medias").style.display = "block";
+}
